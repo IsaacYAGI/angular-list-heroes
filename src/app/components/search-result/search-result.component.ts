@@ -10,10 +10,12 @@ import {Heroe, HeroesService } from 'src/app/services/heroes.service';
 export class SearchResultComponent implements OnInit {
 
   heroes: Heroe[];
+  termino: string;
   constructor(
     private _serviceHeroes: HeroesService, 
     private activatedRoute:ActivatedRoute) { 
       this.activatedRoute.params.subscribe((params) => {
+        this.termino = params['termino']
         this.heroes = this._serviceHeroes.buscarHeroes(params['termino']);
       });
     }
