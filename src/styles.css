@@ -1,5 +1,9 @@
 /*Animaciones*/
 
+body {
+  padding-bottom: 50px;
+}
+
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
