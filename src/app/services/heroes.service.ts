@@ -67,6 +67,10 @@ export class HeroesService {
   getHeroe(i: number): Heroe{
     return this.heroes[i]
   }
+
+  buscarHeroes(termino: string): Heroe[] {
+    return this.heroes.filter((element) => element.nombre.toLowerCase().indexOf(termino.toLowerCase()) != -1);
+  }
 }
 
 export interface Heroe {
