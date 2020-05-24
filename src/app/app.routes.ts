@@ -11,7 +11,6 @@ const APP_ROUTES: Routes = [
     {path: 'heroes', component: HeroesComponent},
     {path: 'heroes/search/:termino', component: SearchResultComponent},
     {path: 'heroe/:id', component: HeroeComponent},
-    {path: 'heroe/:id', component: HeroeComponent},
     {path: '**', pathMatch: 'full', redirectTo: 'home'},
     
 ];
