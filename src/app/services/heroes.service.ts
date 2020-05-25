@@ -69,7 +69,13 @@ export class HeroesService {
   }
 
   buscarHeroes(termino: string): Heroe[] {
-    return this.heroes.filter((element) => element.nombre.toLowerCase().indexOf(termino.toLowerCase()) != -1);
+   return this.heroes
+    .reduce((prev: Heroe[], act: Heroe, index: number) =>{
+      //Añadimos el id al objeto y agregamos el resto con el spread operator
+      prev.push({id: index, ...act});
+      return prev;
+    },[])
+    .filter((element) => element.nombre.toLowerCase().indexOf(termino.toLowerCase()) != -1);
   }
 }
 
@@ -79,4 +85,5 @@ export interface Heroe {
   img: string,
   aparicion: string,
   casa: string,
+  id?: number
 };
